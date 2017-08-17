@@ -23,9 +23,12 @@ class Checkout extends Component {
 
   render() {
     const { removeFromCart, checkout, cart, total, history } = this.props;
-    const cartSwag = cart.map( swag => (
+    const cartSwag = cart.map( swag => {
+
+    return (
       <Swag key={ swag.id } id={ swag.id } remove={ removeFromCart } title={ swag.title } price={ swag.price } />
-    ));
+    )
+   });
 
     return (
       <div id="Checkout__parent">
